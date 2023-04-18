@@ -1,1 +1,1 @@
-# Practica-Simulacion-electronica
+Archivo de muestra
