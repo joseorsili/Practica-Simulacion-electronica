@@ -1,2 +1,2 @@
 Archivo de muestra
-[![](https://img.youtube.com/vi/3RFAX3CbSGA/0.jpg)](https://www.youtube.com/watch?v=3RFAX3CbSGA)
+[![]](https://www.youtube.com/watch?v=3RFAX3CbSGA)
