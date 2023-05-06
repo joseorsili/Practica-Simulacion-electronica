@@ -1,5 +1,4 @@
 # Repositorio para almacenamiento de TPs
-### Insta
 
 ### Carrera Tecnico Superior en Telecomunicaciones
 
