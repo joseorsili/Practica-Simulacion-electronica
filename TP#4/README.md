@@ -27,6 +27,6 @@ utilizando ESP32, PlatformIO y VSCode.
 
 * Documentación oficial de PlatformIO y VSCode para ESP32.
 * Biblioteca de Arduino para ESP32.
-#### Tutorial de control de temperatura con ESP32 y sensor de temperatura: [![Tutorial](../assets/BannerElect.png)](https://randomnerdtutorials.com/esp32-temperature-controlled-relayarduino-ide/)
+#### Tutorial de control de temperatura con ESP32 y sensor de temperatura: [![Tutorial](../assets/linkvideo.png)](https://randomnerdtutorials.com/esp32-temperature-controlled-relayarduino-ide/)
 
-#### Tutorial de comunicación WiFi con ESP32: [![Tutorial](../assets/BannerElect.png)](https://randomnerdtutorials.com/esp32-web-server-arduino-ide/)
+#### Tutorial de comunicación WiFi con ESP32: [![Tutorial](../assets/linkvideo.png)](https://randomnerdtutorials.com/esp32-web-server-arduino-ide/)
