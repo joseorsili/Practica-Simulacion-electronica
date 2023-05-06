@@ -1,4 +1,10 @@
-##### Archivo de muestra
+# Repositorio para almacenamiento de TPs
+### Insta
 
-``` [![Alt text](https://img.youtube.com/vi/3RFAX3CbSGA/0.jpg)](https://www.youtube.com/watch?v=3RFAX3CbSGA)
-#### Hola ```
+### Carrera Tecnico Superior en Telecomunicaciones
+
+*  Materia: Electronica Microcontrolada
+*  DOCENTE: Cristian Gonzalo Vera
+*  Nombre del Alumno: Jose Augusto Orsili             
+
+### AÑO: 2023
