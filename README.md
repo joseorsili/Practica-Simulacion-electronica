@@ -1,4 +1,4 @@
-# Repositorio para almacenamiento de TPs
+## Repositorio para almacenamiento de TPs
 
 [![Instituto](assets/ispc2.png)](assets2/ispc.png)
 
