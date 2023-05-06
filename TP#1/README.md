@@ -1,4 +1,4 @@
-[![Instituto](../assets/BannerElect.pngassets/ispc2.png)](../assets/BannerElect.pngassets2/ispc.png)
+[![Instituto](../assets/BannerElect.png)](../assets/BannerElect.png)
 
 #### Trabajo Practico #1
 
