@@ -2,7 +2,7 @@
 
 ### Carrera Tecnico Superior en Telecomunicaciones
 
-*  Materia: Electronica Microcontrolada
+#### Materia: Electronica Microcontrolada
 *  DOCENTE: Cristian Gonzalo Vera
 *  Nombre del Alumno: Jose Augusto Orsili             
 
