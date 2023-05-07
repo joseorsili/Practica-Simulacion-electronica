@@ -14,7 +14,7 @@
 Ejercicio 1: Análisis de circuitos combinacionales Dado el siguiente circuito combinacional que utiliza puertas AND, OR y NOT, analizar la
 función lógica que representa y expresarla en forma de minitérminos y maxitérminos.
 
-[![Ejercicio #1](../assets/TP#6EJ#1.png)](../assets/TP#6EJ#1.png)
+[![Ejercicio #1](../assets/TP6EJ1.png)](../assets/TP6EJ1.png)
 
 Ejercicio 2: Síntesis de circuitos combinacionales Dada las siguientes funciones lógicas, simplificarlas utilizando el método de Karnaugh y
 construir un circuito combinacional que la represente utilizando puertas lógicas básicas.
