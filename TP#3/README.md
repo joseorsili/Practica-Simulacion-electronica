@@ -27,7 +27,7 @@
 
     El valor standarizado obtenible en el mercado es de 470 Ohmios por lo tanto se realizó el proyecto utilizando ese valor que es el más cercano al arrojado por la fórmula.
 
-    [![Ejemplo Proteus](assets/EJ1.bmp))](assets/EJ1.bmp)
+    [![Ejemplo Proteus](assets/EJ1.jpg))](assets/EJ1.jpg)
 
 2. Diseñar y simular un circuito eléctrico con un capacitor y analizar el comportamiento de la corriente y la tensión en el capacitor.
 
