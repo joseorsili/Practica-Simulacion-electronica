@@ -15,6 +15,20 @@
 
 1. Configuración del entorno de programación: Descargar e instalar las herramientas necesarias, incluyendo VSCode, PlatformIO y la biblioteca de
 Arduino para ESP32. Configurar la conexión del ESP32 con la computadora.
+
+    Se Instalo Visual Studio Code y se le configuro PlatformIO que permite la programacion del ESP32 en el IDE mencionado.
+
+   [![ESP32](assets/PlatformIO_1.jpg))](assets/PlatformIO_1.jpg)
+
+    La conexion a la computadora se realizo mediante un cable usb a micro_usb, el mismo provee alimentacion al modulo ESP32 como tambien la transmision de los datos para programarlo.
+
+   [![ESP32](assets/ESP32_B.jpeg))](assets/ESP32_B.jpeg)
+
+   En la imagen se puede observar el administrador de dispositivos de Windows detectando el ESP32 en el puerto COM7.
+
+   [![ESP32](assets/ESP32_A.jpeg))](assets/ESP32_A.jpeg)
+
+
 2. Conexión del sensor de temperatura: Conectar el sensor de temperatura al ESP32 utilizando un pin analógico. Implementar un programa que lea la
 señal del sensor y la muestre en el monitor serial.
 3. Implementación del control de temperatura: Implementar un programa que
