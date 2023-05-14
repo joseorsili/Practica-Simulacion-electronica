@@ -26,7 +26,7 @@ Arduino para ESP32. Configurar la conexión del ESP32 con la computadora.
 
    En la imagen se puede observar el administrador de dispositivos de Windows detectando el ESP32 en el puerto COM7.
 
-   [![ESP32](assets/ESP32_A.jpeg))](assets/ESP32_A.jpeg)
+   [![ESP32](assets/ESP32_A.jpg))](assets/ESP32_A.jpg)
 
 
 2. Conexión del sensor de temperatura: Conectar el sensor de temperatura al ESP32 utilizando un pin analógico. Implementar un programa que lea la
