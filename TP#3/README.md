@@ -70,7 +70,7 @@
 
     Se diseño un circuito con un transformador que posee un factor de acoplamiento de 1.0, la entrada de corriente alterna es de 100 Voltios y 50 Hertz.
 
-    [![Ejemplo Proteus](assets/EJ3.jpg))](assets/EJ3.jpg)
+    [![Ejemplo Proteus](assets/EJ4.jpg))](assets/EJ4.jpg)
 
     La tensión RMS (valor eficaz) en el primario y el secundario de un transformador con un factor de acoplamiento de 1.0 y una tensión alterna de entrada de 100 voltios y 50 Hz será la misma, ya que la relación de voltaje es de 1:1.
     La fórmula para calcular la tensión RMS es:
@@ -90,7 +90,7 @@ comportamiento.
 
     Se realizo un circuito que involucro los siguientes componentes: 1 Fuente de 24 voltios de corriente continua. 1 resistencia de 1k Ohm, 1 capacitor electrolitico de 100 microfaradios, 1 inductor de 1 microhenry, 1 capacitor electrolitico de 1 microfaradio y una resistencia de 1k utilizada como carga. Los resultados de la simulacion pueden verse en la imagen.
 
-    [![Ejemplo Proteus](assets/EJ4.jpg))](assets/EJ4.jpg)
+    [![Ejemplo Proteus](assets/EJ5.jpg))](assets/EJ5.jpg)
 
 
 
