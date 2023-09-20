@@ -1,0 +1,166 @@
+#include "p16f877a.inc"
+__CONFIG _HS_OSC & _WDT_OFF & _PWRTE_ON & _CP_OFF
+
+; Definiciones de pines y constantes
+TEMP_SENSOR_PIN    equ 2    ; Pin al que está conectado el LM35
+LCD_RS             equ RB0  ; Pin RS del LCD
+LCD_EN             equ RB1  ; Pin EN del LCD
+LCD_D4             equ RB2  ; Pin D4 del LCD
+LCD_D5             equ RB3  ; Pin D5 del LCD
+LCD_D6             equ RB4  ; Pin D6 del LCD
+LCD_D7             equ RB5  ; Pin D7 del LCD
+COUNT = 0
+
+; Inicio del programa
+org 0x00
+goto main
+
+; Rutina de inicio
+main
+    ; Configurar registros
+    clrf    PORTB       ; Limpiar el puerto B
+    clrf    PORTD       ; Limpiar el puerto D
+    movlw   b'00111000' ; Configurar LCD en modo 4 bits
+    call    LCD_Init
+    call    Delay
+
+loop
+    ; Leer temperatura desde LM35
+    call    ReadTemperature
+    ; Mostrar la temperatura en el LCD
+    call    LCD_Clear
+    movf    TEMP_HIGH, W
+    call    LCD_Char
+    movf    TEMP_LOW, W
+    call    LCD_Char
+    movlw   'C'
+    call    LCD_Char
+
+    goto    loop
+
+; Rutina para inicializar el LCD en modo 4 bits
+LCD_Init
+    BSF     STATUS, RP0      ; Cambia a banco 1
+    BTFSC   TRISB, 0         ; Verifica si RB0 está configurado como entrada
+    BSF     TRISB, 0         ; Si es entrada, cámbialo a salida
+    BCF     STATUS, RP0      ; Vuelve a banco 0
+    RETURN
+
+    ; Inicialización del LCD
+    call    Delay
+    movlw   0x03
+    call    LCD_Nibble
+    call    Delay
+    movlw   0x03
+    call    LCD_Nibble
+    call    Delay
+    movlw   0x03
+    call    LCD_Nibble
+    call    Delay
+    movlw   0x02
+    call    LCD_Nibble
+    call    Delay
+
+    ; Configurar el LCD en modo 4 bits, 2 líneas y fuente de 5x8
+    movlw   0x28
+    call    LCD_Cmd
+    call    Delay
+    ; Mostrar el cursor y activar el parpadeo
+    movlw   0x0E
+    call    LCD_Cmd
+    call    Delay
+    ; Limpiar el display y mover el cursor a la posición inicial
+    movlw   0x01
+    call    LCD_Cmd
+    call    Delay
+    ; Configurar el LCD para desplazar el cursor a la derecha
+    movlw   0x06
+    call    LCD_Cmd
+    call    Delay
+    ; Retorno
+    return
+
+; Rutina para enviar un comando al LCD
+LCD_Cmd
+    bcf     LCD_RS, 1
+    call    LCD_Nibble
+    call    LCD_Nibble
+    return
+
+; Rutina para enviar un carácter al LCD
+LCD_Char
+    bsf     LCD_RS, 1
+    call    LCD_Nibble
+    call    LCD_Nibble
+    return
+
+; Rutina para enviar 4 bits al LCD
+LCD_Nibble
+    BCF  LCD_EN, 1
+    MOVF PORTD, W   ; Cambiado de MOVWF a MOVF
+    BSF  LCD_EN, 1
+    CALL Delay
+    MOVLW  0
+    MOVWF  LCD_EN
+    RETURN
+
+; Rutina para limpiar el LCD y volver a la posición inicial
+LCD_Clear
+     movlw   0x01
+     call    LCD_Cmd
+     call    Delay
+     movlw   0x02
+     call    LCD_Cmd
+     call    Delay
+     return
+
+; Rutina para leer la temperatura desde el LM35
+ReadTemperature
+     bsf     STATUS, RP0
+     movlw   0x01
+     movwf   TRISB       ; Configurar el pin del sensor como entrada
+     bcf     STATUS, RP0
+     bsf     STATUS, C   ; Asegurar que el carry esté en 1
+     clrf    TEMP_LOW    ; Limpiar el registro de temperatura baja
+     clrf    TEMP_HIGH   ; Limpiar el registro de temperatura alta
+     movlw   10          ; Número de conversiones
+
+; Bucle de lectura y acumulación
+read_loop
+     bcf     PORTB, TEMP_SENSOR_PIN ; Iniciar la conversión
+     call    Delay
+     bsf     PORTB, TEMP_SENSOR_PIN  ; Finalizar la conversión
+     call    Delay
+     movf    PORTB, W    ; Leer el valor del sensor
+     addwf   TEMP_LOW, F ; Acumular la parte baja de la temperatura
+     btfsc   STATUS, C   ; Verificar si hubo acarreo
+     incf    TEMP_HIGH, F ; Si hubo acarreo, incrementar la parte alta
+     decf    COUNT, F     ; Decrementar el contador de conversiones
+     btfss STATUS, Z
+     ;goto  CONVERSION    
+     goto    read_loop   ; Repetir hasta completar el número de conversiones
+     return
+
+; Rutina de retardo
+Delay
+     ; Ajusta este retardo según sea necesario para tu configuración
+     ; Este es un retardo simple y puede que necesites calibrarlo
+     ; según la frecuencia de tu cristal.
+     movlw   0x0F
+delay_loop
+     movlw   0xFF
+     movwf   0x01
+     movwf   0x02
+     decfsz  0x01, F
+     goto    $+2
+     decfsz  0x02, F
+     goto    delay_loop
+     return
+
+; Constantes y variables
+; Registro para la parte baja de la temperatura
+TEMP_LOW    equ 0x20
+; Registro para la parte alta de la temperatura
+TEMP_HIGH   equ 0x21
+
+ end
