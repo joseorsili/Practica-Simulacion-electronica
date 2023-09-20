@@ -96,6 +96,28 @@ comportamiento.
 
 ##### Fundamentos electrónicos
 1. Diseñar y simular un circuito con un diodo rectificador y analizar su comportamiento.
+
+    [![Ejemplo Proteus](assets/Sim_Diodo.jpg))](assets/Sim_Diodo.jpg)
+
+Marco teorico
+Un rectificador de media onda es un circuito electrónico que se utiliza para convertir una señal de corriente alterna (CA) en una señal de corriente continua (CC) pulsante. Este tipo de rectificador solo aprovecha la mitad positiva o la mitad negativa de la forma de onda de entrada, dejando pasar solo los semiciclos positivos o negativos de la señal.
+El funcionamiento básico de un rectificador de media onda se puede explicar de la siguiente manera:
+Señal de entrada: El rectificador de media onda toma una señal de corriente alterna sinusoidal como entrada. Esta señal puede ser proporcionada por una fuente de voltaje alterno, como la red eléctrica. 
+Diodo rectificador: El componente principal en un rectificador de media onda es un diodo semiconductor. Un diodo es un dispositivo que permite el flujo de corriente en una dirección específica y bloquea el flujo en la dirección opuesta.
+Conductión del diodo: Cuando la tensión de entrada es positiva (semiciclo positivo), el diodo se polariza en directo y permite el flujo de corriente a través de él. La corriente fluye desde el nodo positivo del diodo hacia el nodo negativo, creando una corriente de salida en la misma dirección que el semiciclo positivo de la señal de entrada.
+Bloqueo del diodo: Cuando la tensión de entrada es negativa (semiciclo negativo), el diodo se polariza en inverso y bloquea el flujo de corriente. En esta condición, el diodo no permite que la corriente fluya a través de él, por lo que no hay corriente de salida durante el semiciclo negativo de la señal de entrada.
+Tensión de salida: Como resultado de este proceso, la señal de salida del rectificador de media onda consiste en una serie de pulsos de corriente positivos que corresponden a los semiciclos positivos de la señal de entrada. Los semiciclos negativos son eliminados, y la tensión de salida es una forma de onda pulsante con frecuencia igual a la frecuencia de la señal de entrada.
+Es importante tener en cuenta que debido a la eliminación de la mitad de la señal de entrada, el rectificador de media onda tiene una eficiencia relativamente baja en comparación con otros rectificadores como el rectificador de onda completa, pero sigue siendo útil en aplicaciones donde se requiera una corriente continua pulsante.
+
+Descripcion del circuito e informacion tecnica 
+En este circuito, estamos utilizando un diodo rectificador 1N4001 conectado a una fuente de tensión alterna y una resistencia de 220 ohmios como carga. Vamos a analizar los valores teóricos que se pueden observar en diferentes partes del circuito: Tensión de la fuente de tensión alterna: Esto depende de la fuente de tensión que estés utilizando. Por ejemplo, si es una fuente de tensión alterna de 220 V, entonces la amplitud de la señal sería de 220 V en el pico positivo y negativo. La frecuencia típica en países con redes eléctricas estándar es de 50 Hz. 
+Tensión de salida del diodo rectificador: Como estamos utilizando un diodo rectificador 1N4001, su caída de tensión directa típica es de alrededor de 0.7 V cuando está conduciendo. Esto significa que la tensión de salida en la resistencia durante el semiciclo positivo de la señal será de aproximadamente 0.7 V menos que la tensión de la fuente, mientras que durante el semiciclo negativo, no habrá tensión de salida.
+Corriente a través del circuito: Para calcular la corriente a través de la resistencia, podemos utilizar la ley de Ohm. La corriente se puede calcular dividiendo la tensión de salida (durante el semiciclo positivo) entre la resistencia. Si suponemos una tensión de fuente de 220 V (pico) y una caída de tensión del diodo de 0.7 V, entonces la tensión a través de la resistencia sería:
+Tensión de salida = Tensión de la fuente - Caída de tensión del diodo
+Tensión de salida = 220 V - 0.7 V = 219.3 V
+Corriente = Tensión de salida / Resistencia
+Corriente = 219.3 V / 220 ohmios ≈ 0.996 A
+
 2. Diseñar y simular un circuito con un transistor bipolar como amplificador y analizar su comportamiento.
 3. Diseñar y simular un circuito con un transistor bipolar como interruptor y analizar su comportamiento.
 4. Diseñar y simular un circuito con un amplificador operacional como sumador inversor y analizar su comportamiento.
